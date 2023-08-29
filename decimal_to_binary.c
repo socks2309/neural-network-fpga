@@ -204,12 +204,12 @@ int fileIsEmpty(FILE* fptr) {
 
 void saveToFile(struct array__bits bit__arr) {
     FILE* fptr1;
-    errno_t error_code = fopen_s(&fptr1, "C:\\BRB\\College-Related\\College Related\\Semester 7\\Major project\\C project files\\ieee754_conversion\\file.txt","w");
+    errno_t error_code = fopen_s(&fptr1, "file.txt","w");
     if (error_code == 0) {
         if (fileIsEmpty(fptr1) == 1) {
             FILE* fptr2;
             fclose(fptr1);
-            errno_t err_code = fopen_s(&fptr2, "C:\\BRB\\College-Related\\College Related\\Semester 7\\Major project\\C project files\\ieee754_conversion\\file.txt", "w");
+            errno_t err_code = fopen_s(&fptr2, "file.txt", "w");
             if (err_code == 0) {
                 for (int i = 0; i < SINGLE_PREC__SIZE; i++) {
                     fprintf(fptr2, "%d", bit__arr.array[i].bit);
@@ -221,7 +221,7 @@ void saveToFile(struct array__bits bit__arr) {
         else {
             fclose(fptr1);
             FILE* fptr2;
-            errno_t err_code = fopen_s(&fptr2, "C:\\BRB\\College-Related\\College Related\\Semester 7\\Major project\\C project files\\ieee754_conversion\\file.txt", "a");
+            errno_t err_code = fopen_s(&fptr2, "file.txt", "a");
             if (err_code == 0) {
                 fputs("\n", fptr2);
                 for (int i = 0; i < SINGLE_PREC__SIZE; i++) {
