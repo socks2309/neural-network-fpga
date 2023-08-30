@@ -1,3 +1,11 @@
+/*This code uses functions like scanf_s and fopen_s which
+might pose a problem while compiling using GCC.
+I recommend using Visual Studio Community to compile this code.
+Adding the necessary header files into the directory can help overcome the issues
+that will occur during compilation using GCC. 
+If this doesn't work then the scanf_s and fopen_s functions can be replaced with their 
+deprecated counterparts, i.e, scanf and fopen.*/
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -158,9 +166,18 @@ struct array__bits ieee754__convert(struct bin___array int__arr, struct bin___ar
         for (int i = 0; i < SINGLE_PREC__SIZE - 1; i++) {
             temp_arr.array[i].bit = temp_arr.array[i + 1].bit;
         }
-        struct bin___array exponent__arr = int_to_bin(SINGLE_PREC__EXP_MAX_VAL + int__arr.size - 1);
-        for (int j = 1; j <= SINGLE_PREC__EXP_SIZE; j++) {
-            ieee754_converted.array[j].bit = exponent__arr.arrP[j - 1];
+        int exponent = SINGLE_PREC__EXP_MAX_VAL + (int__arr.size - 1);
+        struct bin___array exponent__arr = int_to_bin(exponent);
+        if (exponent__arr.size == 7) {
+            ieee754_converted.array[1].bit = 0;
+            for (int j = 2; j <= SINGLE_PREC__EXP_SIZE; j++) {
+                ieee754_converted.array[j].bit = exponent__arr.arrP[j - 2];
+            }
+        }
+        else {
+            for (int j = 1; j <= SINGLE_PREC__EXP_SIZE; j++) {
+                ieee754_converted.array[j].bit = exponent__arr.arrP[j - 1];
+            }
         }
         for (int k = SINGLE_PREC__EXP_SIZE + 1; k < SINGLE_PREC__SIZE; k++) {
             ieee754_converted.array[k].bit = temp_arr.array[k - SINGLE_PREC__EXP_SIZE - 1].bit;
