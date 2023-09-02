@@ -1,10 +1,12 @@
-/*This code uses functions like scanf_s and fopen_s which
-might pose a problem while compiling using GCC.
-I recommend using Visual Studio Community to compile this code.
-Adding the necessary header files into the directory can help overcome the issues
-that will occur during compilation using GCC. 
-If this doesn't work then the scanf_s and fopen_s functions can be replaced with their 
-deprecated counterparts, i.e, scanf and fopen.*/
+// Get the binary representation of any number in the IEEE format. 
+
+// This code uses functions like scanf_s and fopen_s which
+// might pose a problem while compiling using GCC.
+// I recommend using Visual Studio Community to compile this code.
+// Adding the necessary header files into the directory can help overcome the issues
+// that will occur during compilation using GCC. 
+// If this doesn't work then the scanf_s and fopen_s functions can be replaced with their 
+// deprecated counterparts, i.e, scanf and fopen.
 
 #include <stdio.h>
 #include <stdint.h>
