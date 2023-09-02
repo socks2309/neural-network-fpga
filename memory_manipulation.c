@@ -1,3 +1,6 @@
+// This code converts any number to the single precision IEEE 754 standard by retrieving what's stored in the memory
+// The hexadecimal number will give the binary representation upon being converted
+
 #include <stdio.h>
 #include <stdint.h>
 
