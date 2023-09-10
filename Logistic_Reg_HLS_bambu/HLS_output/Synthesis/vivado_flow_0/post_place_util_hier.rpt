@@ -1,0 +1,109 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Fri Sep  8 18:50:16 2023
+| Host         : kiit2951-ThinkPad-Yoga-460 running 64-bit Ubuntu 22.04.2 LTS
+| Command      : report_utilization -hierarchical -file /home/kiit2951/Desktop/Verilog_ML/Logistic_regression_python/HLS_Logreg/HLS_output//Synthesis/vivado_flow_0/post_place_util_hier.rpt
+| Design       : main
+| Device       : 7z020clg484-1
+| Design State : Physopt postPlace
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------------------------------+--------------------------------------------------+------------+------------+---------+------+-----+--------+--------+--------------+
+|                        Instance                       |                      Module                      | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++-------------------------------------------------------+--------------------------------------------------+------------+------------+---------+------+-----+--------+--------+--------------+
+| main                                                  |                                            (top) |        824 |        824 |       0 |    0 | 344 |      0 |      8 |            3 |
+|   (main)                                              |                                            (top) |          0 |          0 |       0 |    0 |   0 |      0 |      0 |            0 |
+|   _main_i0                                            |                                            _main |        824 |        824 |       0 |    0 | 344 |      0 |      8 |            3 |
+|     (_main_i0)                                        |                                            _main |         83 |         83 |       0 |    0 |   0 |      0 |      0 |            0 |
+|     Controller_i                                      |                                  controller_main |         30 |         30 |       0 |    0 |  13 |      0 |      0 |            0 |
+|     Datapath_i                                        |                                    datapath_main |        713 |        713 |       0 |    0 | 330 |      0 |      8 |            3 |
+|       __internal_bambu_memcpy_61_i0                   |                          __internal_bambu_memcpy |        184 |        184 |       0 |    0 | 126 |      0 |      0 |            0 |
+|         Controller_i                                  |               controller___internal_bambu_memcpy |         66 |         66 |       0 |    0 |   9 |      0 |      0 |            0 |
+|         Datapath_i                                    |                 datapath___internal_bambu_memcpy |         89 |         89 |       0 |    0 | 116 |      0 |      0 |            0 |
+|           fu___internal_bambu_memcpy_329_34109        |          ui_pointer_plus_expr_FU__parameterized0 |          0 |          0 |       0 |    0 |   0 |      0 |      0 |            0 |
+|           fu___internal_bambu_memcpy_329_673          |                                    ui_ge_expr_FU |          2 |          2 |       0 |    0 |   0 |      0 |      0 |            0 |
+|           reg_0                                       |                                   register_SE_11 |         33 |         33 |       0 |    0 |  32 |      0 |      0 |            0 |
+|           reg_1                                       |                                   register_SE_12 |          0 |          0 |       0 |    0 |   8 |      0 |      0 |            0 |
+|           reg_2                                       |                   register_SE__parameterized0_13 |         10 |         10 |       0 |    0 |   1 |      0 |      0 |            0 |
+|           reg_3                                       |                                  register_STD_14 |          0 |          0 |       0 |    0 |  32 |      0 |      0 |            0 |
+|           reg_4                                       |                                   register_SE_15 |         36 |         36 |       0 |    0 |  32 |      0 |      0 |            0 |
+|           reg_5                                       |                   register_SE__parameterized1_16 |          0 |          0 |       0 |    0 |  10 |      0 |      0 |            0 |
+|           reg_6                                       |                   register_SE__parameterized0_17 |          8 |          8 |       0 |    0 |   1 |      0 |      0 |            0 |
+|         done_delayed_REG                              |                                   flipflop_AR_10 |         32 |         32 |       0 |    0 |   1 |      0 |      0 |            0 |
+|       array_33690_0                                   |                             ARRAY_1D_STD_BRAM_NN |         49 |         49 |       0 |    0 |   3 |      0 |      2 |            0 |
+|         (array_33690_0)                               |                             ARRAY_1D_STD_BRAM_NN |          1 |          1 |       0 |    0 |   0 |      0 |      0 |            0 |
+|         ARRAY_1D_STD_BRAM_NN_instance                 |                          ARRAY_1D_STD_BRAM_NN_SP |         48 |         48 |       0 |    0 |   3 |      0 |      2 |            0 |
+|           ADDRESS_DECODING_LOGIC_NN_instance          |                        ADDRESS_DECODING_LOGIC_NN |         16 |         16 |       0 |    0 |   3 |      0 |      0 |            0 |
+|           BRAM_MEMORY_NN_instance_a                   |              BRAM_MEMORY_NN_CORE__parameterized0 |          0 |          0 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance | TRUE_DUAL_PORT_BYTE_ENABLING_RAM__parameterized0 |          0 |          0 |       0 |    0 |   0 |      0 |      1 |            0 |
+|           SECOND_MEMORY.BRAM_MEMORY_NN_instance_b     |                              BRAM_MEMORY_NN_CORE |         32 |         32 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance |                 TRUE_DUAL_PORT_BYTE_ENABLING_RAM |         32 |         32 |       0 |    0 |   0 |      0 |      1 |            0 |
+|       array_33691_0                                   |             ARRAY_1D_STD_BRAM_NN__parameterized0 |         28 |         28 |       0 |    0 |   3 |      0 |      2 |            0 |
+|         ARRAY_1D_STD_BRAM_NN_instance                 |          ARRAY_1D_STD_BRAM_NN_SP__parameterized0 |         28 |         28 |       0 |    0 |   3 |      0 |      2 |            0 |
+|           ADDRESS_DECODING_LOGIC_NN_instance          |        ADDRESS_DECODING_LOGIC_NN__parameterized0 |          0 |          0 |       0 |    0 |   3 |      0 |      0 |            0 |
+|           BRAM_MEMORY_NN_instance_a                   |              BRAM_MEMORY_NN_CORE__parameterized2 |          8 |          8 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance | TRUE_DUAL_PORT_BYTE_ENABLING_RAM__parameterized2 |          8 |          8 |       0 |    0 |   0 |      0 |      1 |            0 |
+|           SECOND_MEMORY.BRAM_MEMORY_NN_instance_b     |              BRAM_MEMORY_NN_CORE__parameterized1 |         20 |         20 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance | TRUE_DUAL_PORT_BYTE_ENABLING_RAM__parameterized1 |         20 |         20 |       0 |    0 |   0 |      0 |      1 |            0 |
+|       array_33764_0                                   |             ARRAY_1D_STD_BRAM_NN__parameterized1 |         49 |         49 |       0 |    0 |   1 |      0 |      2 |            0 |
+|         (array_33764_0)                               |             ARRAY_1D_STD_BRAM_NN__parameterized1 |          1 |          1 |       0 |    0 |   0 |      0 |      0 |            0 |
+|         ARRAY_1D_STD_BRAM_NN_instance                 |          ARRAY_1D_STD_BRAM_NN_SP__parameterized1 |         48 |         48 |       0 |    0 |   1 |      0 |      2 |            0 |
+|           ADDRESS_DECODING_LOGIC_NN_instance          |        ADDRESS_DECODING_LOGIC_NN__parameterized1 |          0 |          0 |       0 |    0 |   1 |      0 |      0 |            0 |
+|           BRAM_MEMORY_NN_instance_a                   |              BRAM_MEMORY_NN_CORE__parameterized4 |          8 |          8 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance | TRUE_DUAL_PORT_BYTE_ENABLING_RAM__parameterized4 |          8 |          8 |       0 |    0 |   0 |      0 |      1 |            0 |
+|           SECOND_MEMORY.BRAM_MEMORY_NN_instance_b     |              BRAM_MEMORY_NN_CORE__parameterized3 |         40 |         40 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance | TRUE_DUAL_PORT_BYTE_ENABLING_RAM__parameterized3 |         40 |         40 |       0 |    0 |   0 |      0 |      1 |            0 |
+|       array_33765_0                                   |             ARRAY_1D_STD_BRAM_NN__parameterized2 |         32 |         32 |       0 |    0 |   1 |      0 |      2 |            0 |
+|         ARRAY_1D_STD_BRAM_NN_instance                 |          ARRAY_1D_STD_BRAM_NN_SP__parameterized2 |         32 |         32 |       0 |    0 |   1 |      0 |      2 |            0 |
+|           ADDRESS_DECODING_LOGIC_NN_instance          |        ADDRESS_DECODING_LOGIC_NN__parameterized2 |          0 |          0 |       0 |    0 |   1 |      0 |      0 |            0 |
+|           BRAM_MEMORY_NN_instance_a                   |              BRAM_MEMORY_NN_CORE__parameterized6 |          8 |          8 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance | TRUE_DUAL_PORT_BYTE_ENABLING_RAM__parameterized6 |          8 |          8 |       0 |    0 |   0 |      0 |      1 |            0 |
+|           SECOND_MEMORY.BRAM_MEMORY_NN_instance_b     |              BRAM_MEMORY_NN_CORE__parameterized5 |         24 |         24 |       0 |    0 |   0 |      0 |      1 |            0 |
+|             TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance | TRUE_DUAL_PORT_BYTE_ENABLING_RAM__parameterized5 |         24 |         24 |       0 |    0 |   0 |      0 |      1 |            0 |
+|       bus_mergerSout_Rdata_ram6_                      |                       bus_merger__parameterized4 |         56 |         56 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_33805                             |                                     mult_expr_FU |         15 |         15 |       0 |    0 |   0 |      0 |      0 |            2 |
+|       fu_main_33672_33806                             |                                     plus_expr_FU |         32 |         32 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_33807                             |                     plus_expr_FU__parameterized0 |          9 |          9 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_33862                             |                     plus_expr_FU__parameterized1 |         29 |         29 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_33889                             |                     plus_expr_FU__parameterized2 |         13 |         13 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_33901                             |                   plus_expr_FU__parameterized2_0 |          7 |          7 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_33913                             |                     plus_expr_FU__parameterized3 |          0 |          0 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_33927                             |                    ui_gt_expr_FU__parameterized0 |         10 |         10 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34013                             |                     plus_expr_FU__parameterized4 |         13 |         13 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34016                             |                                     cond_expr_FU |         28 |         28 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34020                             |                                       ne_expr_FU |          2 |          2 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34022                             |                                       lt_expr_FU |          3 |          3 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34024                             |                                    ui_le_expr_FU |         12 |         12 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34026                             |                    ui_le_expr_FU__parameterized0 |          8 |          8 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34028                             |                  ui_le_expr_FU__parameterized0_1 |          8 |          8 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34030                             |                  ui_le_expr_FU__parameterized0_2 |         11 |         11 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34032                             |                  ui_le_expr_FU__parameterized0_3 |          9 |          9 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34178                             |                     plus_expr_FU__parameterized5 |          9 |          9 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34196                             |                     plus_expr_FU__parameterized6 |          0 |          0 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       fu_main_33672_34214                             |                     plus_expr_FU__parameterized7 |          0 |          0 |       0 |    0 |   0 |      0 |      0 |            0 |
+|       reg_11                                          |                                     register_STD |          0 |          0 |       0 |    0 |  17 |      0 |      0 |            1 |
+|       reg_12                                          |                     register_STD__parameterized1 |         30 |         30 |       0 |    0 |  20 |      0 |      0 |            0 |
+|       reg_17                                          |                                   register_STD_4 |          9 |          9 |       0 |    0 |  20 |      0 |      0 |            0 |
+|       reg_18                                          |                                   register_STD_5 |         12 |         12 |       0 |    0 |  21 |      0 |      0 |            0 |
+|       reg_19                                          |                                   register_STD_6 |          9 |          9 |       0 |    0 |  20 |      0 |      0 |            0 |
+|       reg_2                                           |                      register_SE__parameterized1 |          3 |          3 |       0 |    0 |   1 |      0 |      0 |            0 |
+|       reg_20                                          |                                   register_STD_7 |         10 |         10 |       0 |    0 |  20 |      0 |      0 |            0 |
+|       reg_21                                          |                                   register_STD_8 |          6 |          6 |       0 |    0 |  12 |      0 |      0 |            0 |
+|       reg_6                                           |                                      register_SE |         18 |         18 |       0 |    0 |  32 |      0 |      0 |            0 |
+|       reg_7                                           |                                    register_SE_9 |         29 |         29 |       0 |    0 |  32 |      0 |      0 |            0 |
+|       reg_8                                           |                      register_SE__parameterized0 |          0 |          0 |       0 |    0 |   1 |      0 |      0 |            0 |
+|     done_delayed_REG                                  |                                      flipflop_AR |          0 |          0 |       0 |    0 |   1 |      0 |      0 |            0 |
++-------------------------------------------------------+--------------------------------------------------+------------+------------+---------+------+-----+--------+--------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

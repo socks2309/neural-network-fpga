@@ -1,0 +1,498 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Fri Sep  8 18:48:40 2023
+| Host         : kiit2951-ThinkPad-Yoga-460 running 64-bit Ubuntu 22.04.2 LTS
+| Command      : report_timing_summary -file /home/kiit2951/Desktop/Verilog_ML/Logistic_regression_python/HLS_Logreg/HLS_output//Synthesis/vivado_flow_0/post_synth_timing_summary.rpt
+| Design       : main
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 2 input ports with partial input delay specified. (HIGH)
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.581        0.000                      0                  854        0.147        0.000                      0                  828        4.500        0.000                       0                   363  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock  Waveform(ns)       Period(ns)      Frequency(MHz)
+-----  ------------       ----------      --------------
+clock  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clock               2.374        0.000                      0                  828        0.147        0.000                      0                  828        4.500        0.000                       0                   363  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock        To Clock              WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------        --------              -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+input port clock  clock                   6.200        0.000                      0                  185                                                                        
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**default**   clock                             0.581        0.000                      0                    2                                                                        
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clock
+  To Clock:  clock
+
+Setup :            0  Failing Endpoints,  Worst Slack        2.374ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.147ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             2.374ns  (required time - arrival time)
+  Source:                 _main_i0/Datapath_i/reg_6/reg_out1_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            _main_i0/done_delayed_REG/reg_out1_reg/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clock rise@10.000ns - clock rise@0.000ns)
+  Data Path Delay:        7.490ns  (logic 4.425ns (59.079%)  route 3.065ns (40.921%))
+  Logic Levels:           12  (CARRY4=8 LUT2=1 LUT3=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.078ns = ( 12.078 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.406ns
+    Clock Pessimism Removal (CPR):    0.183ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=0)                   0.000     0.000    clock
+                         IBUF (Prop_ibuf_I_O)         0.921     0.921 r  clock_IBUF_inst/O
+                         net (fo=1, unplaced)         0.800     1.721    clock_IBUF
+                         BUFG (Prop_bufg_I_O)         0.101     1.822 r  clock_IBUF_BUFG_inst/O
+                         net (fo=363, unplaced)       0.584     2.406    _main_i0/Datapath_i/reg_6/clock_IBUF_BUFG
+                         FDRE                                         r  _main_i0/Datapath_i/reg_6/reg_out1_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.478     2.884 r  _main_i0/Datapath_i/reg_6/reg_out1_reg[12]/Q
+                         net (fo=4, unplaced)         1.007     3.891    _main_i0/Datapath_i/fu_main_33672_34013/Q[12]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.671     4.562 r  _main_i0/Datapath_i/fu_main_33672_34013/reg_out1_reg[0]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000     4.562    _main_i0/Datapath_i/fu_main_33672_34013/reg_out1_reg[0]_i_2_n_0
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     4.893 r  _main_i0/Datapath_i/fu_main_33672_34013/reg_out1_reg[1]_i_2/O[3]
+                         net (fo=3, unplaced)         0.636     5.529    _main_i0/Datapath_i/fu_main_33672_34016/out1[4]
+                         LUT3 (Prop_lut3_I0_O)        0.302     5.831 r  _main_i0/Datapath_i/fu_main_33672_34016/_present_state[12]_i_38/O
+                         net (fo=1, unplaced)         0.000     5.831    _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_25_0[1]
+                         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.429     6.260 r  _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_30/CO[3]
+                         net (fo=1, unplaced)         0.009     6.269    _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_30_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     6.386 r  _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_25/CO[3]
+                         net (fo=1, unplaced)         0.000     6.386    _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_25_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     6.503 r  _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_20/CO[3]
+                         net (fo=1, unplaced)         0.000     6.503    _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_20_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     6.840 f  _main_i0/Datapath_i/fu_main_33672_34178/_present_state_reg[12]_i_16/O[1]
+                         net (fo=2, unplaced)         0.622     7.462    _main_i0/Datapath_i/fu_main_33672_34178/out1[0]
+                         LUT2 (Prop_lut2_I0_O)        0.332     7.794 r  _main_i0/Datapath_i/fu_main_33672_34178/_present_state[12]_i_10/O
+                         net (fo=1, unplaced)         0.000     7.794    _main_i0/Datapath_i/fu_main_33672_34022/DI[1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.547     8.341 r  _main_i0/Datapath_i/fu_main_33672_34022/_present_state_reg[12]_i_5/CO[3]
+                         net (fo=1, unplaced)         0.009     8.350    _main_i0/Datapath_i/fu_main_33672_34022/_present_state_reg[12]_i_5_n_0
+                         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.281     8.631 r  _main_i0/Datapath_i/fu_main_33672_34022/_present_state_reg[12]_i_3/CO[0]
+                         net (fo=2, unplaced)         0.322     8.953    _main_i0/Controller_i/_present_state_reg[12]_0[0]
+                         LUT4 (Prop_lut4_I0_O)        0.367     9.320 r  _main_i0/Controller_i/_present_state[12]_i_2/O
+                         net (fo=2, unplaced)         0.460     9.780    _main_i0/Controller_i/_next_state[12]
+                         LUT5 (Prop_lut5_I0_O)        0.116     9.896 r  _main_i0/Controller_i/reg_out1_i_1__0/O
+                         net (fo=1, unplaced)         0.000     9.896    _main_i0/done_delayed_REG/done_delayed_REG_signal_in
+                         FDRE                                         r  _main_i0/done_delayed_REG/reg_out1_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)     10.000    10.000 r  
+                                                      0.000    10.000 r  clock (IN)
+                         net (fo=0)                   0.000    10.000    clock
+                         IBUF (Prop_ibuf_I_O)         0.788    10.788 r  clock_IBUF_inst/O
+                         net (fo=1, unplaced)         0.760    11.548    clock_IBUF
+                         BUFG (Prop_bufg_I_O)         0.091    11.639 r  clock_IBUF_BUFG_inst/O
+                         net (fo=363, unplaced)       0.439    12.078    _main_i0/done_delayed_REG/clock_IBUF_BUFG
+                         FDRE                                         r  _main_i0/done_delayed_REG/reg_out1_reg/C
+                         clock pessimism              0.183    12.261    
+                         clock uncertainty           -0.035    12.226    
+                         FDRE (Setup_fdre_C_D)        0.044    12.270    _main_i0/done_delayed_REG/reg_out1_reg
+  -------------------------------------------------------------------
+                         required time                         12.270    
+                         arrival time                          -9.896    
+  -------------------------------------------------------------------
+                         slack                                  2.374    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.147ns  (arrival time - required time)
+  Source:                 _main_i0/Datapath_i/reg_12/reg_out1_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            _main_i0/Datapath_i/reg_18/reg_out1_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.391ns  (logic 0.245ns (62.685%)  route 0.146ns (37.315%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.982ns
+    Source Clock Delay      (SCD):    0.628ns
+    Clock Pessimism Removal (CPR):    0.209ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=0)                   0.000     0.000    clock
+                         IBUF (Prop_ibuf_I_O)         0.151     0.151 r  clock_IBUF_inst/O
+                         net (fo=1, unplaced)         0.337     0.488    clock_IBUF
+                         BUFG (Prop_bufg_I_O)         0.026     0.514 r  clock_IBUF_BUFG_inst/O
+                         net (fo=363, unplaced)       0.114     0.628    _main_i0/Datapath_i/reg_12/clock_IBUF_BUFG
+                         FDRE                                         r  _main_i0/Datapath_i/reg_12/reg_out1_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.147     0.775 f  _main_i0/Datapath_i/reg_12/reg_out1_reg[0]/Q
+                         net (fo=7, unplaced)         0.146     0.921    _main_i0/Datapath_i/fu_main_33672_33889/in1[0]
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.019 r  _main_i0/Datapath_i/fu_main_33672_33889/reg_out1[0]_i_1/O
+                         net (fo=1, unplaced)         0.000     1.019    _main_i0/Datapath_i/reg_18/out_plus_expr_FU_32_0_32_41_i0_fu_main_33672_33889[0]
+                         FDRE                                         r  _main_i0/Datapath_i/reg_18/reg_out1_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=0)                   0.000     0.000    clock
+                         IBUF (Prop_ibuf_I_O)         0.339     0.339 r  clock_IBUF_inst/O
+                         net (fo=1, unplaced)         0.355     0.694    clock_IBUF
+                         BUFG (Prop_bufg_I_O)         0.029     0.723 r  clock_IBUF_BUFG_inst/O
+                         net (fo=363, unplaced)       0.259     0.982    _main_i0/Datapath_i/reg_18/clock_IBUF_BUFG
+                         FDRE                                         r  _main_i0/Datapath_i/reg_18/reg_out1_reg[0]/C
+                         clock pessimism             -0.209     0.773    
+                         FDRE (Hold_fdre_C_D)         0.099     0.872    _main_i0/Datapath_i/reg_18/reg_out1_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.872    
+                         arrival time                           1.019    
+  -------------------------------------------------------------------
+                         slack                                  0.147    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clock
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clock }
+
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         10.000      6.116                _main_i0/Datapath_i/reg_11/reg_out1_reg/CLK
+Low Pulse Width   Slow    FDRE/C       n/a            0.500         5.000       4.500                _main_i0/Datapath_i/reg_11/reg_out1_reg[0]__0/C
+High Pulse Width  Slow    FDRE/C       n/a            0.500         5.000       4.500                _main_i0/Datapath_i/reg_11/reg_out1_reg[0]__0/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  input port clock
+  To Clock:  clock
+
+Setup :            0  Failing Endpoints,  Worst Slack        6.200ns,  Total Violation        0.000ns
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             6.200ns  (required time - arrival time)
+  Source:                 start_port
+                            (input port)
+  Destination:            _main_i0/Datapath_i/array_33690_0/ARRAY_1D_STD_BRAM_NN_instance/BRAM_MEMORY_NN_instance_a/TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance/L11_write_b[1].memory_reg/WEA[0]
+                            (rising edge-triggered cell RAMB18E1 clocked by clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        5.321ns  (logic 2.059ns (38.704%)  route 3.261ns (61.296%))
+  Logic Levels:           6  (CARRY4=1 IBUF=1 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        2.078ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.078ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Timing Exception:       MaxDelay Path 10.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  start_port (IN)
+                         net (fo=0)                   0.000     0.000    start_port
+                         IBUF (Prop_ibuf_I_O)         0.921     0.921 r  start_port_IBUF_inst/O
+                         net (fo=4, unplaced)         0.800     1.721    _main_i0/Controller_i/start_port_IBUF
+                         LUT5 (Prop_lut5_I2_O)        0.148     1.869 r  _main_i0/Controller_i/reg_out1[7]_i_2__0/O
+                         net (fo=19, unplaced)        0.508     2.377    _main_i0/Controller_i/wrenable_reg_5
+                         LUT3 (Prop_lut3_I0_O)        0.124     2.501 r  _main_i0/Controller_i/out10_carry_i_1/O
+                         net (fo=1, unplaced)         0.333     2.834    _main_i0/Datapath_i/__internal_bambu_memcpy_61_i0/Datapath_i/fu___internal_bambu_memcpy_329_34109/DI[0]
+                         CARRY4 (Prop_carry4_DI[0]_O[1])
+                                                      0.436     3.270 f  _main_i0/Datapath_i/__internal_bambu_memcpy_61_i0/Datapath_i/fu___internal_bambu_memcpy_329_34109/out10_carry/O[1]
+                         net (fo=1, unplaced)         0.312     3.582    _main_i0/Datapath_i/__internal_bambu_memcpy_61_i0/Controller_i/O[0]
+                         LUT6 (Prop_lut6_I1_O)        0.306     3.888 f  _main_i0/Datapath_i/__internal_bambu_memcpy_61_i0/Controller_i/L11_write_b[1].memory_reg_i_44/O
+                         net (fo=20, unplaced)        0.509     4.397    _main_i0/Datapath_i/__internal_bambu_memcpy_61_i0/Controller_i/reg_out1_reg[9]_0
+                         LUT6 (Prop_lut6_I2_O)        0.124     4.521 r  _main_i0/Datapath_i/__internal_bambu_memcpy_61_i0/Controller_i/L11_write_b[1].memory_reg_i_23__1/O
+                         net (fo=1, unplaced)         0.800     5.321    _main_i0/Datapath_i/array_33690_0/ARRAY_1D_STD_BRAM_NN_instance/BRAM_MEMORY_NN_instance_a/TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance/L11_write_b[1].memory_reg_1[0]
+                         RAMB18E1                                     r  _main_i0/Datapath_i/array_33690_0/ARRAY_1D_STD_BRAM_NN_instance/BRAM_MEMORY_NN_instance_a/TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance/L11_write_b[1].memory_reg/WEA[0]
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                                                      0.000    10.000 r  clock (IN)
+                         net (fo=0)                   0.000    10.000    clock
+                         IBUF (Prop_ibuf_I_O)         0.788    10.788 r  clock_IBUF_inst/O
+                         net (fo=1, unplaced)         0.760    11.548    clock_IBUF
+                         BUFG (Prop_bufg_I_O)         0.091    11.639 r  clock_IBUF_BUFG_inst/O
+                         net (fo=363, unplaced)       0.439    12.078    _main_i0/Datapath_i/array_33690_0/ARRAY_1D_STD_BRAM_NN_instance/BRAM_MEMORY_NN_instance_a/TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance/clock_IBUF_BUFG
+                         RAMB18E1                                     r  _main_i0/Datapath_i/array_33690_0/ARRAY_1D_STD_BRAM_NN_instance/BRAM_MEMORY_NN_instance_a/TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance/L11_write_b[1].memory_reg/CLKARDCLK
+                         clock pessimism              0.000    12.078    
+                         clock uncertainty           -0.025    12.053    
+                         RAMB18E1 (Setup_ramb18e1_CLKARDCLK_WEA[0])
+                                                     -0.532    11.521    _main_i0/Datapath_i/array_33690_0/ARRAY_1D_STD_BRAM_NN_instance/BRAM_MEMORY_NN_instance_a/TRUE_DUAL_PORT_BYTE_ENABLING_RAM_instance/L11_write_b[1].memory_reg
+  -------------------------------------------------------------------
+                         required time                         11.521    
+                         arrival time                          -5.321    
+  -------------------------------------------------------------------
+                         slack                                  6.200    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+Path Group:  **default**
+From Clock:  clock
+  To Clock:  
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.581ns,  Total Violation        0.000ns
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.581ns  (required time - arrival time)
+  Source:                 _main_i0/Datapath_i/reg_21/reg_out1_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            return_port[0]
+  Path Group:             **default**
+  Path Type:              Max at Slow Process Corner
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        7.013ns  (logic 4.609ns (65.724%)  route 2.404ns (34.276%))
+  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT6=1 OBUF=1)
+  Output Delay:           0.000ns
+  Clock Path Skew:        -2.406ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.000ns
+    Source Clock Delay      (SCD):    2.406ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Timing Exception:       MaxDelay Path 10.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=0)                   0.000     0.000    clock
+                         IBUF (Prop_ibuf_I_O)         0.921     0.921 r  clock_IBUF_inst/O
+                         net (fo=1, unplaced)         0.800     1.721    clock_IBUF
+                         BUFG (Prop_bufg_I_O)         0.101     1.822 r  clock_IBUF_BUFG_inst/O
+                         net (fo=363, unplaced)       0.584     2.406    _main_i0/Datapath_i/reg_21/clock_IBUF_BUFG
+                         FDRE                                         r  _main_i0/Datapath_i/reg_21/reg_out1_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.478     2.884 r  _main_i0/Datapath_i/reg_21/reg_out1_reg[12]/Q
+                         net (fo=2, unplaced)         0.481     3.365    _main_i0/Datapath_i/fu_main_33672_33927/Q[1]
+                         LUT2 (Prop_lut2_I0_O)        0.321     3.686 r  _main_i0/Datapath_i/fu_main_33672_33927/return_port_OBUF[0]_inst_i_90/O
+                         net (fo=1, unplaced)         0.000     3.686    _main_i0/Datapath_i/fu_main_33672_33927/return_port_OBUF[0]_inst_i_90_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.547     4.233 r  _main_i0/Datapath_i/fu_main_33672_33927/return_port_OBUF[0]_inst_i_54/CO[3]
+                         net (fo=1, unplaced)         0.009     4.242    _main_i0/Datapath_i/fu_main_33672_33927/return_port_OBUF[0]_inst_i_54_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     4.359 r  _main_i0/Datapath_i/fu_main_33672_33927/return_port_OBUF[0]_inst_i_28/CO[3]
+                         net (fo=1, unplaced)         0.000     4.359    _main_i0/Datapath_i/fu_main_33672_33927/return_port_OBUF[0]_inst_i_28_n_0
+                         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.252     4.611 r  _main_i0/Datapath_i/fu_main_33672_33927/return_port_OBUF[0]_inst_i_6/CO[2]
+                         net (fo=1, unplaced)         1.114     5.725    _main_i0/Datapath_i/reg_18/return_port[0]_2[0]
+                         LUT6 (Prop_lut6_I4_O)        0.310     6.035 r  _main_i0/Datapath_i/reg_18/return_port_OBUF[0]_inst_i_1/O
+                         net (fo=1, unplaced)         0.800     6.835    return_port_OBUF[0]
+                         OBUF (Prop_obuf_I_O)         2.584     9.419 r  return_port_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     9.419    return_port[0]
+                                                                      r  return_port[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         clock pessimism              0.000    10.000    
+                         output delay                -0.000    10.000    
+  -------------------------------------------------------------------
+                         required time                         10.000    
+                         arrival time                          -9.419    
+  -------------------------------------------------------------------
+                         slack                                  0.581    
+
+
+
+
+
