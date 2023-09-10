@@ -5,3 +5,7 @@ This ongoing project aims to implement a neural network on an FPGA. The language
 The decimal_to_binary.c file implements the single precision IEEE 754 standard for any floating point number from -inf to +inf.<br />
 logistic_regression.ipynb is Jupyter notebook file to train a model for breast cancer prediction and then model parameters are converted into fixed point for further implementation into C.<br />
 logreg_test2.c is the code written in C to predict the output using the trained model parameters from previous Jupyter notebook file. Fixed point arithmetic used with 12 bit quantization factor. One approximated Sigmoid function is implemented in fixed point version (12 bit).<br />
+
+# Directory details
+"verilog_Logistic_Regression" contain handwritten verilog design and testbench code to implement a logistic regression model for prediction of cancer. The model parameters are exported from Python annd converted to fixed point.
+"Logistic_reg_HLS_Bambu"-> same problem is implemented using high level synthesis tool BAMBU and tested. 
