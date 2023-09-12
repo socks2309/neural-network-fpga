@@ -1,12 +1,7 @@
 // Get the binary representation of any number in the IEEE format. 
 
-// This code uses functions like scanf_s and fopen_s which
-// might pose a problem while compiling using GCC.
-// I recommend using Visual Studio Community to compile this code.
-// Adding the necessary header files into the directory can help overcome the issues
-// that will occur during compilation using GCC. 
-// If this doesn't work then the scanf_s and fopen_s functions can be replaced with their 
-// deprecated counterparts, i.e, scanf and fopen.
+// Code uses ISO C99 and will probably cause issues if compiled with MSVC. 
+// Use Clang or GCC for compilation.
 
 #include <stdio.h>
 #include <stdint.h>
@@ -49,7 +44,7 @@ int main() {
     
     float num;
     printf("Enter number you want the IEEE 754 format of: ");
-    scanf_s("%f", &num);
+    scanf("%f", &num);
     
     struct array__bits ieee754array = ieee754__format(num);
     printf("The IEEE754 format of entered number: ");
@@ -59,7 +54,7 @@ int main() {
 
     clock_t toc = clock();
     double duration = ((double)(toc - tic)) / CLOCKS_PER_SEC;
-    printf("\nDURATION OF PROGRAM = %f", duration);
+    printf("\nDURATION OF PROGRAM = %f\n", duration);
 }
 
 struct array__bits ieee754__format(float number) {
@@ -222,33 +217,10 @@ int fileIsEmpty(FILE* fptr) {
 }
 
 void saveToFile(struct array__bits bit__arr) {
-    FILE* fptr1;
-    errno_t error_code = fopen_s(&fptr1, "file.txt","w");
-    if (error_code == 0) {
-        if (fileIsEmpty(fptr1) == 1) {
-            FILE* fptr2;
-            fclose(fptr1);
-            errno_t err_code = fopen_s(&fptr2, "file.txt", "w");
-            if (err_code == 0) {
-                for (int i = 0; i < SINGLE_PREC__SIZE; i++) {
-                    fprintf(fptr2, "%d", bit__arr.array[i].bit);
-                }
-                fclose(fptr2);
-            }
-            else printf("ERROR OPENING FILE!");
-        }
-        else {
-            fclose(fptr1);
-            FILE* fptr2;
-            errno_t err_code = fopen_s(&fptr2, "file.txt", "a");
-            if (err_code == 0) {
-                fputs("\n", fptr2);
-                for (int i = 0; i < SINGLE_PREC__SIZE; i++) {
-                    fprintf(fptr2, "%d", bit__arr.array[i].bit);
-                }
-                fclose(fptr2);
-            }
-            else printf("ERROR OPENING FILE!");
-        }
+    FILE* fptr;
+    fptr = fopen("file.txt","w+");
+    for(int i = 0; i < SINGLE_PREC__SIZE; i++) {
+        fprintf(fptr, "%d", bit__arr.array[i].bit);
     }
+    fclose(fptr);
 }
