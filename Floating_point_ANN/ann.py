@@ -156,14 +156,13 @@ for jj in range(100):
 	f = open("feature.c","w")
 	f.write("double x[30] = {")
 	for i in range(30):
-    		f.write(str(X_test[jj][i]))
-    		if(i<29):
-            		f.write(",")
-    		if((i+1)%10==0):
-            		f.write("\n")
-    
-	f.write("};"+"\n\n")
-	f.close()
+        f.write(str(X_test[jj][i]))
+    	if(i<29):
+            f.write(",")
+    	if((i+1)%10==0):
+            f.write("\n")
+f.write("};"+"\n\n")
+f.close()
 	
 	#call bash shell for doing additional task
 	import os
