@@ -5,3 +5,6 @@ Run the ann.py file to train the model and to export model parameters as C heade
 change the number in for loop **for jj in range(100):** in ann.py file to any value below 100 to simulate no of test features. Result will be printed on Terminal.
 </br>
 All 100 test data has been tested after FPGA implementation(behavoiral simulation in Verilog) and gives excellent agreement with Actual data, Keras Predicted result, C simulation result.
+
+# ANN using floating point arithmetic
+In this directory, the ann.py implements the same network as in **Simple 16_8_1 ANN** but instead of converting to fixed-point, the calculations are done in floating point to test if Bambu is able to allocate resources for it or not. 
