@@ -20,7 +20,7 @@ This project utilizes a tool called [**Bambu HLS**](https://panda.deib.polimi.it
 ## How to run this project?
 1. Install [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. Install Icarus Verilog and Gtkwave (`sudo apt-get install iverilog gtkwave`) 
-3. Install the latest version of Python
+3. Install the latest version of Python and `pip` (if there are errors running the `ann.py` script, you may be missing the dependancies, which can be installed using `pip`, for example, `pip install sklearn`, etc.)
 4. Install GCC
 5. Run the following in your terminal :
 - `cd ~`

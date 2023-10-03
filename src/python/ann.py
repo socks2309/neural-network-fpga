@@ -1,10 +1,10 @@
+import os
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, accuracy_score
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
-import os
 
 x,y = load_breast_cancer(return_X_y = True)
 
