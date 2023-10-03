@@ -11,7 +11,7 @@ This directory is the actual source of this project. The `script.sh` in the main
 - The **c** folder has the `C` files that will be the input to the HLS tool and will subsequently be converted to its corresponding Verilog file.
 - The **hdl** folder is where the HLS tool will store the design code, testbench, and the `.mem` files. It will also provide a `shell` script and a `tcl` script to automate the process of creating the project in Vivado (This can be changed in Bambu options). Do not delete the `network_tb.v` as it is not automatically generated.
 
-## 3. script.sh
+### 3. script.sh
 This `shell` script automates everything for you so you don't have to individually compile and run everything.
 
 ## Tools used
