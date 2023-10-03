@@ -19,6 +19,7 @@ This `shell` script automates everything for you so you don't have to individual
 This project utilizes a tool called [**Bambu HLS**](https://panda.deib.polimi.it/?page_id=31) developed by the System Architectures Group at Politecnico di Milano, Italy. Please make sure to download the tool (download the AppImage) and place it preferably in your `home` directory (`echo ~` to find out yours) or follow the instructions to build it from the source given on their website which would automatically add Bambu to your path. 
 
 ## How to run this project?
+Make sure you're on a Linux environment, either running on bare metal or on a VM like Windows subsystem for Linux or Oracle VM, etc.
 1. Install [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. Install Icarus Verilog and Gtkwave (`sudo apt-get install iverilog gtkwave`) 
 3. Install the latest version of Python and `pip` (if there are errors running the `ann.py` script, you may be missing the dependancies, which can be installed using `pip`, for example, `pip install sklearn`, etc.)
