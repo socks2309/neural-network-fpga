@@ -1,6 +1,6 @@
 # Neural Network on FPGA
 This project aims to implement a neural network on an FPGA with an open-source HLS tool called "Bambu HLS". It is divided into several phases:
-1. Phase 1: Implement simple ANN for binary classification. 
+1. **Phase 1:** Implement simple ANN for binary classification. 
 
 ## File descriptions
 ### 1.  ieee_conversions Directory
