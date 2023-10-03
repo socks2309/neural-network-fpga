@@ -57,7 +57,7 @@ output_layer_biases = classifier.layers[2].get_weights()[1]
 def export_model_params(layer, layer_w, layer_b, n_features, n_neurons):
     layer_w = layer_w.T
     layer_b = layer_b
-    file_name = f"{os.path.expanduser('~')}/params_layer{layer}.c"
+    file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/params_layer{layer}.c"
     f = open(file_name, 'w')
 
     #Writing weights
@@ -96,7 +96,8 @@ export_model_params(1,second_layer_weights,second_layer_biases,16, 8) #Layer 2
 export_model_params(2, output_layer_weights, output_layer_biases, 8, 1) #Output layer
 
 # Exporting test labels -->
-test_feat = open("/c/test_features.c", "w")
+file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/test_features.c"
+test_feat = open(file_name, "w")
 test_feat.write("short y_test[100] = {")
 for i in range(100):
     test_feat.write(str(y_test[i]))
@@ -106,7 +107,8 @@ test_feat.write("};")
 test_feat.close()
 
 # Exporting keras predictions -->
-pred_feat = open("/c/keras_predicted_features.c", "w")
+file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/keras_predicted_features.c"
+pred_feat = open(file_name, "w")
 pred_feat.write("#include <stdbool.h>\n\n")
 pred_feat.write("bool y_pred[100] = {")
 for i in range(100):
@@ -117,7 +119,8 @@ pred_feat.write("};")
 pred_feat.close()
 
 #Exporting test images ->
-file = open("/c/feature.c", "w")
+file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/features.c"
+file = open(file_name, "w")
 file.write("double x[100][30] = {")
 for i in range(100):
     file.write("{")
@@ -130,22 +133,3 @@ for i in range(100):
         file.write(",")
 file.write("};")
 file.close()
-
-"""
-#Calling Bambu tool
-run_HLS = "bambu ann.c --top-fname=main --soft-float -lm"
-os.system(run_HLS)
-
-#Generating HDL code using Icarus Verilog
-run_HDL = "iverilog -o result main.v main_tb.v"
-os.system(run_HDL)
-show_result = "vvp result"
-os.system(show_result)
-os.system("gcc ann.c -lm")
-os.system("./a.out")
-
-#Predictions for C file
-print("Actual label for this input feature: ", y_test[0])
-print("Keras label for this input feature: ", y_pred[0])
-print("\n******************************************************\n")
-"""

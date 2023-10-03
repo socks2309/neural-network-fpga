@@ -1,5 +1,5 @@
 # ANN using floating point arithmetic
-In this directory, the `ann.py` implements the same network as in **Simple 16_8_1 ANN** but instead of converting to fixed-point, the calculations are done in floating point to test if Bambu is able to allocate resources for it or not. The `ann.py` file implements the ANN model, extracts the parameters and features to the corresponding C files, calls the Bambu HLS tool and converts the C file to Verilog file and then calls the Icarus Verilog tool for behavioral simuation.
+In this directory, the `ann.py` script implements a simple ANN and the calculations are done in floating point. After implementing and compiling the ANN model, the script extracts the parameters and features to the corresponding `C` files in the **c** directory
 
 ## Changing test input
-Line 100 of the `ann.py` file tests the trained network by exporting the features of the test image which is in the format of a 2D 30x16 array of type double named "`x`". This array gets stored in the `feature.c` file so change the first index to any number under 100 to give the corresponding test sample as input to the model.
+In the `ann.c` file, change the global variable `test_sample` to any value under 100 to test your desired test sample. The test samples are loaded into a `C` file called `features.c`.

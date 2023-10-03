@@ -2,9 +2,13 @@
 #include "params_layer0.c"
 #include "params_layer1.c"
 #include "params_layer2.c"
-#include "feature.c"
+#include "features.c"
+
+// Mention the sample that will be fetched from features.c
+int test_sample = 0;
 
 int network (void) {
+
     int n_feature = 16;
     int n_layer0_neuron = 16;
     int n_layer1_neuron = 8;
@@ -18,11 +22,10 @@ int network (void) {
 
     int i, j;
     double temp = 0.0;
-    // Testing for 1st input image, x[0][] -->
     // Code for layer 0
     for (i = 0; i < n_layer0_neuron; i++) {
         for (j = 0; j < n_feature; j++) {
-            temp = temp + (weights_layer0[i][j] * x[0][j]);
+            temp = temp + (weights_layer0[i][j] * x[test_sample][j]);
         }
         temp = temp + biases_layer0[i];
 
