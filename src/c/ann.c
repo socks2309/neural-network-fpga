@@ -1,11 +1,10 @@
-#include <stdio.h>
 #include <math.h>
 #include "params_layer0.c"
 #include "params_layer1.c"
 #include "params_layer2.c"
 #include "feature.c"
 
-int main () {
+int network (void) {
     int n_feature = 16;
     int n_layer0_neuron = 16;
     int n_layer1_neuron = 8;
@@ -19,10 +18,11 @@ int main () {
 
     int i, j;
     double temp = 0.0;
+    // Testing for 1st input image, x[0][] -->
     // Code for layer 0
     for (i = 0; i < n_layer0_neuron; i++) {
         for (j = 0; j < n_feature; j++) {
-            temp = temp + (weights_layer0[i][j] * x[j]);
+            temp = temp + (weights_layer0[i][j] * x[0][j]);
         }
         temp = temp + biases_layer0[i];
 
@@ -65,8 +65,6 @@ int main () {
     double sig_act = (double) 1 / (1 + exp(-output));
     if(sig_act < 0.5) result = 1;
     else result = 0; 
-
-    printf("Predicted value for this feature using C: %d\n", result);
     status = 1;
     
     return result;

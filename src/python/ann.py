@@ -35,7 +35,6 @@ classifier.fit(x_train, y_train, batch_size=100, epochs=200)
 #Predictions
 print("\n")
 y_pred = classifier.predict(x_test)
-y_keras = classifier.predict(x_test)
 y_pred = (y_pred > 0.5)
 
 #Making confusion matrix
@@ -58,7 +57,7 @@ output_layer_biases = classifier.layers[2].get_weights()[1]
 def export_model_params(layer, layer_w, layer_b, n_features, n_neurons):
     layer_w = layer_w.T
     layer_b = layer_b
-    file_name = f"params_layer{layer}.c"
+    file_name = f"{os.path.expanduser('~')}/params_layer{layer}.c"
     f = open(file_name, 'w')
 
     #Writing weights
@@ -96,24 +95,45 @@ export_model_params(0,first_layer_weights, first_layer_biases, 30, 16) #Layer 1
 export_model_params(1,second_layer_weights,second_layer_biases,16, 8) #Layer 2
 export_model_params(2, output_layer_weights, output_layer_biases, 8, 1) #Output layer
 
+# Exporting test labels -->
+test_feat = open("/c/test_features.c", "w")
+test_feat.write("short y_test[100] = {")
+for i in range(100):
+    test_feat.write(str(y_test[i]))
+    if (i < 100):
+        test_feat.write(",")
+test_feat.write("};")
+test_feat.close()
 
-#Testing for first test image x_test[0][]->
-file = open("feature.c", "w")
-file.write("double x[30] = {")
-for i in range(30):
-    file.write(str(x_test[1][i])) # type: ignore
-    if(i < 29):
+# Exporting keras predictions -->
+pred_feat = open("/c/keras_predicted_features.c", "w")
+pred_feat.write("#include <stdbool.h>\n\n")
+pred_feat.write("bool y_pred[100] = {")
+for i in range(100):
+    pred_feat.write(str(y_pred[i]).strip("[ ]").lower())
+    if (i < 100):
+        pred_feat.write(",")
+pred_feat.write("};")
+pred_feat.close()
+
+#Exporting test images ->
+file = open("/c/feature.c", "w")
+file.write("double x[100][30] = {")
+for i in range(100):
+    file.write("{")
+    for j in range(30):
+        file.write(str(x_test[i][j])) #type: ignore
+        if (j < 29):
+            file.write(",")
+    file.write("}")
+    if (i < 99):
         file.write(",")
-    if((i+1)%10 == 0):
-        file.write("\n")
-file.write("};" + "\n\n")
+file.write("};")
 file.close()
-print("Actual label for this input feature: ", y_test[1])
 
-
-
+"""
 #Calling Bambu tool
-run_HLS = "/home/socks/bambu-0.9.7.AppImage ann.c --top-fname=main --soft-float -lm"
+run_HLS = "bambu ann.c --top-fname=main --soft-float -lm"
 os.system(run_HLS)
 
 #Generating HDL code using Icarus Verilog
@@ -128,3 +148,4 @@ os.system("./a.out")
 print("Actual label for this input feature: ", y_test[0])
 print("Keras label for this input feature: ", y_pred[0])
 print("\n******************************************************\n")
+"""
