@@ -15,15 +15,15 @@
 #define SINGLE_PREC__EXP_MAX_VAL 127
 #define __STDC_WANT_LIB_EXT1__ 1
 
-struct bit___array {
+struct bit__array {
     uint8_t bit : 1;
 };
 
 struct array__bits {
-    struct bit___array array[SINGLE_PREC__SIZE];
+    struct bit__array array[SINGLE_PREC__SIZE];
 };
 
-struct bin___array {
+struct bin__array {
     int* arrP;
     int size;
 };
@@ -31,10 +31,10 @@ struct bin___array {
 void print_num_array(int* arr, int start, int end);
 void print_struct_array(struct array__bits array, int start, int end);
 void reverse(int* array, int size);
-struct bin___array int_to_bin(int int_part);
-struct bin___array dec_to_bin(float dec_part);
-struct array__bits combine__arr(struct bin___array int__arr, struct bin___array dec__arr);
-struct array__bits ieee754__convert(struct bin___array int__arr, struct bin___array dec__arr, int zero__int);
+struct bin__array int_to_bin(int int_part);
+struct bin__array dec_to_bin(float dec_part);
+struct array__bits combine__arr(struct bin__array int__arr, struct bin__array dec__arr);
+struct array__bits ieee754__convert(struct bin__array int__arr, struct bin__array dec__arr, int zero__int);
 struct array__bits ieee754__format(float num);
 int fileIsEmpty(FILE* fptr);
 void saveToFile(struct array__bits array);
@@ -68,8 +68,8 @@ struct array__bits ieee754__format(float number) {
     }
     else zero__int = 0;
 
-    struct bin___array int__array = int_to_bin(int__part);
-    struct bin___array dec__array = dec_to_bin(dec__part);
+    struct bin__array int__array = int_to_bin(int__part);
+    struct bin__array dec__array = dec_to_bin(dec__part);
     struct array__bits ieee754__array = ieee754__convert(int__array, dec__array, zero__int);
     if (number < 0) {
         ieee754__array.array[0].bit = 1;
@@ -78,8 +78,8 @@ struct array__bits ieee754__format(float number) {
     return ieee754__array;
 }
 
-struct bin___array int_to_bin(int int_part) {
-    struct bin___array int__arr;
+struct bin__array int_to_bin(int int_part) {
+    struct bin__array int__arr;
     int* temp_arr = (int*)calloc(SINGLE_PREC__MANTISSA_SIZE, sizeof(int));
     int index = 0;
     int__arr.size = 0;
@@ -98,8 +98,8 @@ struct bin___array int_to_bin(int int_part) {
     return int__arr;
 }
 
-struct bin___array dec_to_bin(float dec_part) {
-    struct bin___array dec__arr;
+struct bin__array dec_to_bin(float dec_part) {
+    struct bin__array dec__arr;
     dec__arr.arrP = (int*)calloc(SINGLE_PREC__SIZE, sizeof(int));
     dec__arr.size = 0;
     for (int i = 0; i < SINGLE_PREC__SIZE; i++) {
@@ -114,7 +114,7 @@ struct bin___array dec_to_bin(float dec_part) {
     return dec__arr;
 }
 
-struct array__bits combine__arr(struct bin___array int__arr, struct bin___array dec__arr) {
+struct array__bits combine__arr(struct bin__array int__arr, struct bin__array dec__arr) {
     struct array__bits mantissa_arr;
     int index, count = 0;
     for (index = 0; index < int__arr.size; index++) {
@@ -128,7 +128,7 @@ struct array__bits combine__arr(struct bin___array int__arr, struct bin___array 
     return mantissa_arr;
 }
 
-struct array__bits ieee754__convert(struct bin___array int__arr, struct bin___array dec__arr, int zero__int) {
+struct array__bits ieee754__convert(struct bin__array int__arr, struct bin__array dec__arr, int zero__int) {
     struct array__bits ieee754_converted;
     if (zero__int == 1) {
         struct array__bits temp__arr = combine__arr(int__arr, dec__arr);
@@ -148,7 +148,7 @@ struct array__bits ieee754__convert(struct bin___array int__arr, struct bin___ar
             temp__arr.array[i].bit = temp__arr.array[i + ctr].bit;
         }
         int exponent = SINGLE_PREC__EXP_MAX_VAL - count;
-        struct bin___array exponent__arr = int_to_bin(exponent);
+        struct bin__array exponent__arr = int_to_bin(exponent);
         ieee754_converted.array[1].bit = 0;
         for (int k = 2; k <= SINGLE_PREC__EXP_SIZE; k++) {
             ieee754_converted.array[k].bit = exponent__arr.arrP[k-2];
@@ -164,7 +164,7 @@ struct array__bits ieee754__convert(struct bin___array int__arr, struct bin___ar
             temp_arr.array[i].bit = temp_arr.array[i + 1].bit;
         }
         int exponent = SINGLE_PREC__EXP_MAX_VAL + (int__arr.size - 1);
-        struct bin___array exponent__arr = int_to_bin(exponent);
+        struct bin__array exponent__arr = int_to_bin(exponent);
         if (exponent__arr.size == 7) {
             ieee754_converted.array[1].bit = 0;
             for (int j = 2; j <= SINGLE_PREC__EXP_SIZE; j++) {
