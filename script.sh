@@ -29,5 +29,12 @@ iverilog -o result network.v network_tb.v
 vvp result
 
 # Building C files and viewing C result and Keras results
-cd ~/neural-network-fpga/main-branch/build/
+cd ~/neural-network-fpga/main-branch/
+if [ -d "build" ]; then
+    rm -rf build
+    mkdir build && cd ~/neural-network-fpga/main-branch/build/
+    cmake ../ -G "Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE && make
+fi
+
+mkdir build && cd ~/neural-network-fpga/main-branch/build/
 cmake ../ -G "Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE && make
