@@ -16,3 +16,7 @@ add_executable(
     src/c/test_features.c)
 
 target_include_directories(c_output PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+if(GCC)
+    add_compile_options(-lm)
+endif(GCC)

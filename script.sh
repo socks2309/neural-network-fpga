@@ -38,3 +38,8 @@ fi
 
 mkdir build && cd ~/neural-network-fpga/main-branch/build/
 cmake ../ -G "Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE && make
+
+# Icarus Verilog compilation
+cd ~/neural-network-fpga/main-branch/src/hdl/ 
+iverilog -o result network.v network_tb.v
+vvp result
