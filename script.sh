@@ -28,6 +28,6 @@ cd ~/neural-network-fpga/main-branch/src/hdl/ && $bambu_path ~/neural-network-fp
 iverilog -o result network.v network_tb.v
 vvp result
 
-# Viewing C result and Keras results
-cd ~/neural-network-fpga/main-branch/src/c/ && gcc test_out.c -lm
-./a.out
+# Building C files and viewing C result and Keras results
+cd ~/neural-network-fpga/main-branch/build/
+cmake ../ -G "Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE && make

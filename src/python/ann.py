@@ -59,6 +59,7 @@ def export_model_params(layer, layer_w, layer_b, n_features, n_neurons):
     layer_b = layer_b
     file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/params_layer{layer}.c"
     f = open(file_name, 'w')
+    f.write("#include \"../../include/network.h\"\n\n")
 
     #Writing weights
     f.write(f"double weights_layer{layer}[{n_neurons}][{n_features}] = " + "{")
@@ -98,6 +99,7 @@ export_model_params(2, output_layer_weights, output_layer_biases, 8, 1) #Output 
 # Exporting test labels -->
 file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/test_features.c"
 test_feat = open(file_name, "w")
+test_feat.write("#include \"../../include/network.h\"\n\n")
 test_feat.write("short y_test[100] = {")
 for i in range(100):
     test_feat.write(str(y_test[i]))
@@ -109,7 +111,9 @@ test_feat.close()
 # Exporting keras predictions -->
 file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/keras_predicted_features.c"
 pred_feat = open(file_name, "w")
-pred_feat.write("#include <stdbool.h>\n\n")
+pred_feat.write("#include <stdbool.h>\n")
+pred_feat.write("#include \"../../include/network.h\"\n\n")
+
 pred_feat.write("bool y_pred[100] = {")
 for i in range(100):
     pred_feat.write(str(y_pred[i]).strip("[ ]").lower())

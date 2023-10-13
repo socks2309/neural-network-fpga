@@ -1,4 +1,3 @@
-settings.json
-.vstags
-a.out
-network.h.gch
+build/
+.vs/
+.vscode/

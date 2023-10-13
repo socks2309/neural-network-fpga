@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "network.h"
+#include <stdbool.h>
+#include "../include/network.h"
 
 int main() {
     int rslt = network();

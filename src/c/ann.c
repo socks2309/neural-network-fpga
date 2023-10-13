@@ -1,8 +1,6 @@
 #include <math.h>
-#include "params_layer0.c"
-#include "params_layer1.c"
-#include "params_layer2.c"
-#include "features.c"
+#include "../../include/network.h"
+
 
 // Mention the sample that will be fetched from features.c
 int test_sample = 0;
@@ -45,7 +43,7 @@ int network (void) {
         for (j = 0; j < n_feature; j++) {
             temp = temp + (weights_layer1[i][j] * y_layer0[j]);
         }
-        temp = temp + biases_layer0[i];
+        temp = temp + biases_layer1[i];
 
         // ReLU activation
         if(temp > 0) {
