@@ -64,7 +64,7 @@ int network (void) {
 
     // Sigmoid activation
     double sig_act = (double) 1 / (1 + exp(-output));
-    if(sig_act < 0.5) result = 1;
+    if(sig_act > 0.5) result = 1;
     else result = 0; 
     status = 1;
     
