@@ -16,3 +16,4 @@ add_executable(
     src/c/test_features.c)
 add_compile_options(-lm)
 target_include_directories(c_output PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(c_output m)

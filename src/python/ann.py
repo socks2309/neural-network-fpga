@@ -125,6 +125,7 @@ pred_feat.close()
 #Exporting test images ->
 file_name = f"{os.path.expanduser('~')}/neural-network-fpga/main-branch/src/c/features.c"
 file = open(file_name, "w")
+file.write("#include \"../../include/network.h\"\n\n")
 file.write("double x[100][30] = {")
 for i in range(100):
     file.write("{")

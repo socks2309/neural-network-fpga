@@ -24,7 +24,7 @@ fi
 # Calling Bambu tool
 cd ~/neural-network-fpga/main-branch/src/hdl/ && $bambu_path ~/neural-network-fpga/main-branch/src/c/ann.c --top-fname=network --fp-subnormal -lm
 
-# Building C files and viewing C result and Keras results
+# Building C files
 cd ~/neural-network-fpga/main-branch/
 if [ -d "build" ]; then
 	rm -rf build
@@ -38,3 +38,6 @@ cmake ../ -G "Unix Makefiles" -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COM
 cd ~/neural-network-fpga/main-branch/src/hdl/
 iverilog -o result network.v network_tb.v
 vvp result
+
+# Viewing C result
+cd ~/neural-network-fpga/main-branch/build/ && ./c_output
