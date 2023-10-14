@@ -21,6 +21,9 @@ if test -f network.v; then
 	mkdir hdl && mv network_tb.v hdl/
 fi
 
+# Calling Bambu tool
+cd ~/neural-network-fpga/main-branch/src/hdl/ && $bambu_path ~/neural-network-fpga/main-branch/src/c/ann.c --top-fname=network --fp-subnormal -lm
+
 # Building C files and viewing C result and Keras results
 cd ~/neural-network-fpga/main-branch/
 if [ -d "build" ]; then

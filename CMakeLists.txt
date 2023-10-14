@@ -14,9 +14,5 @@ add_executable(
     src/c/params_layer1.c
     src/c/params_layer2.c
     src/c/test_features.c)
-
+add_compile_options(-lm)
 target_include_directories(c_output PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-if(GCC)
-    add_compile_options(-lm)
-endif(GCC)
