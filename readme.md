@@ -40,8 +40,8 @@ Make sure you're on a Linux environment, either running on bare metal or on a VM
 4. Install the latest version of Python and `pip` (if there are errors running the `ann.py` script, you may be missing the dependencies, which can be installed using `pip`, for example, `pip install sklearn`, etc.)
 5. Install GCC
 6. Run the following in your terminal :
-  - `cd ~`
-  - `git clone --branch mk2 https://github.com/socks2309/neural-network-fpga.git ~/neural-network-fpga/main-branch/`
-  - `cd /neural-network-fpga/main-branch/`
-  - `chmod +x ./script.sh`
-  - `./script.sh`
+    - `cd ~`
+    - `git clone --branch mk2 https://github.com/socks2309/neural-network-fpga.git ~/neural-network-fpga/main-branch/`
+    - `cd /neural-network-fpga/main-branch/`
+    - `chmod +x ./script.sh`
+    - `./script.sh`
