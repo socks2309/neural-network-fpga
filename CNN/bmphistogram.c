@@ -14,9 +14,16 @@ void BMP_histogram(BMP_Image *img)
   int * greenfreq = malloc(sizeof(int) * HIST_WIDTH);
   int * bluefreq  = malloc(sizeof(int) * HIST_WIDTH);
   // set all values to zero
+  memset(redfreq, 0, sizeof(int) * HIST_WIDTH);
+  memset(greenfreq, 0, sizeof(int) * HIST_WIDTH);
+  memset(bluefreq, 0, sizeof(int) * HIST_WIDTH);
+  
+  // Non-standard function bzero, only works in Linux
+  /*
   bzero(redfreq, sizeof(int) * HIST_WIDTH);
   bzero(greenfreq, sizeof(int) * HIST_WIDTH);
   bzero(bluefreq, sizeof(int) * HIST_WIDTH);
+  */
 
   // count the frequencies
   int pxl;
