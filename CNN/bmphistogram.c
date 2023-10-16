@@ -77,8 +77,9 @@ void BMP_histogram(BMP_Image *img)
     }
   
   // set all pixels to black
-  bzero(img-> data, 
-	sizeof(unsigned char) * (img -> data_size));
+  memset(img->data, 0, sizeof(unsigned char) * (img->data_size));
+  // Non-standard function bzero
+  // bzero(img-> data, sizeof(unsigned char) * (img -> data_size));
   int brightness;
   for (brightness = 0; brightness < HIST_WIDTH; 
        brightness ++)
