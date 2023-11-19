@@ -1,14 +1,16 @@
 import os
-import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import confusion_matrix, accuracy_score, ConfusionMatrixDisplay
+# from sklearn.metrics import confusion_matrix, accuracy_score, ConfusionMatrixDisplay
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
-from keras.callbacks import Callback
+# from keras.callbacks import Callback
 
+# Uncomment above imports while plotting
+
+# Loading and splitting dataset 
 x,y = load_breast_cancer(return_X_y = True)
 
 x_train, x_test, \
@@ -16,6 +18,7 @@ x_train, x_test, \
                                        test_size=0.20,
                                        random_state=23)
 
+#Standardizing features
 st_x = StandardScaler()
 x_train = st_x.fit_transform(x_train)
 x_test = st_x.transform(x_test)
@@ -35,6 +38,7 @@ classifier.add(Dense(1,activation='sigmoid'))
 #Compiling ANN
 classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
+"""
 #Performance metrics
 class Metrics(Callback):
   def on_epoch_end(self, epoch, logs=None):
@@ -44,15 +48,18 @@ class Metrics(Callback):
 loss_val = []
 accuracy_val = []
 metrics = Metrics() 
+"""
 
 #Fitting the ANN to training set
-classifier.fit(x_train, y_train, batch_size=100, epochs=1000, callbacks=[metrics])
+classifier.fit(x_train, y_train, batch_size=100, epochs=1000) 
+# Add callbacks=[metrics] option if plotting metrics 
 
 #Predictions
 print("\n")
 y_pred = classifier.predict(x_test)
 y_pred = (y_pred > 0.5)
 
+"""
 #Making confusion matrix
 c_matrix = confusion_matrix(y_test, y_pred)
 disp = ConfusionMatrixDisplay(confusion_matrix=c_matrix)
@@ -63,7 +70,9 @@ print(c_matrix)
 print("\n")
 
 print('Accuracy score is:',100*accuracy_score(y_test, y_pred),'%\n\n')
+"""
 
+"""
 #Plotting metrics
 epochs = range(1,len(loss_val)+1)
 
@@ -78,6 +87,7 @@ plt.ylabel("Metrics")
 plt.legend()
 plt.grid(True)
 plt.show() 
+"""
 
 #Print model parameters: weight and bias
 first_layer_weights = classifier.layers[0].get_weights()[0]
