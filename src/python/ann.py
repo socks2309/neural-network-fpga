@@ -82,10 +82,10 @@ plt.show()
 #Print model parameters: weight and bias
 first_layer_weights = classifier.layers[0].get_weights()[0]
 first_layer_biases = classifier.layers[0].get_weights()[1]
-second_layer_weights = classifier.layers[1].get_weights()[0]
-second_layer_biases = classifier.layers[1].get_weights()[1]
-output_layer_weights = classifier.layers[2].get_weights()[0]
-output_layer_biases = classifier.layers[2].get_weights()[1]
+second_layer_weights = classifier.layers[2].get_weights()[0]
+second_layer_biases = classifier.layers[2].get_weights()[1]
+output_layer_weights = classifier.layers[4].get_weights()[0]
+output_layer_biases = classifier.layers[4].get_weights()[1]
 
 # Model parameters exporting function
 def export_model_params(layer, layer_w, layer_b, n_features, n_neurons):
