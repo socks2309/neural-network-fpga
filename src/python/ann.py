@@ -34,8 +34,7 @@ classifier.add(Dense(1,activation='sigmoid'))
 classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 #Fitting the ANN to training set
-classifier.fit(x_train, y_train, batch_size=100, epochs=1000) 
-# Add callbacks=[metrics] option if plotting metrics 
+classifier.fit(x_train, y_train, batch_size=100, epochs=1000)
 
 #Predictions
 print("\n")
@@ -53,10 +52,10 @@ print('Accuracy score is:',100*accuracy_score(y_test, y_pred),'%\n\n')
 #Store model parameters: weight and bias
 first_layer_weights = classifier.layers[0].get_weights()[0]
 first_layer_biases = classifier.layers[0].get_weights()[1]
-second_layer_weights = classifier.layers[2].get_weights()[0]
-second_layer_biases = classifier.layers[2].get_weights()[1]
-output_layer_weights = classifier.layers[4].get_weights()[0]
-output_layer_biases = classifier.layers[4].get_weights()[1]
+second_layer_weights = classifier.layers[1].get_weights()[0]
+second_layer_biases = classifier.layers[1].get_weights()[1]
+output_layer_weights = classifier.layers[3].get_weights()[0]
+output_layer_biases = classifier.layers[3].get_weights()[1]
 
 # Model parameters exporting function
 def export_model_params(layer, layer_w, layer_b, n_features, n_neurons):
