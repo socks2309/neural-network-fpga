@@ -22,7 +22,7 @@ if test -f network.v; then
 fi
 
 # Calling Bambu tool
-cd ~/neural-network-fpga/main-branch/src/hdl/ && $bambu_path ~/neural-network-fpga/main-branch/src/c/ann.c --top-fname=network --fp-subnormal -lm
+cd ~/neural-network-fpga/main-branch/src/hdl/ && $bambu_path ~/neural-network-fpga/main-branch/src/c/ann.c --top-fname=network --fp-subnormal -lm --device-name="xc7a100t,-1,csg324,VVD"
 
 # Building C files
 cd ~/neural-network-fpga/main-branch/
