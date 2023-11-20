@@ -24,7 +24,6 @@ classifier = Sequential()
 
 #Input layer
 classifier.add(Dense(16, activation='relu', input_shape=(30,)))
-classifier.add(Dropout(0.5))
 #Hidden layer
 classifier.add(Dense(8,activation='relu'))
 classifier.add(Dropout(0.5))
