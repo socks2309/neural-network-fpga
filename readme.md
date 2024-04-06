@@ -32,7 +32,7 @@ This project utilizes a tool called [**Bambu HLS**](https://panda.deib.polimi.it
 
 ## How to run this project?
 
-Make sure you're on a Linux environment, either running on bare metal or on a VM like Windows subsystem for Linux or Oracle VM, etc.
+Make sure you're on a Linux environment, either running on bare metal or on a VM like Windows subsystem for Linux (WSL2) or Oracle VM, etc.
 
 1. Install [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. Install CMake `sudo apt-get install cmake`
