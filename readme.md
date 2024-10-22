@@ -3,7 +3,7 @@
 This project aims to implement a neural network on an FPGA with an open-source HLS tool called "Bambu HLS". It is divided into several phases:
 
 1. **Phase 1:** ANN implementation.
-2. **Phase 2:** CNN implementation.
+2. **Phase 2:** CNN implementation (WIP)
 
 ## File descriptions
 
